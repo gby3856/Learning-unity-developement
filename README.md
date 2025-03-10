@@ -4,3 +4,24 @@
   I didn't really know about Unity engine and C# language, so I just decided to learn by 'Learn by doing' method.
   The language itself had some similarities with the C language which I learned from the last semester's class.
   And the Unity engine's UI was not that familiar, but for some reasons it reminded me of Cinema4D's UI.
+Unity Development Log (March 6 - March 10)
+March 6 - March 10
+Studied Chapter 6 of the Unity Textbook (ClimbCloud).
+Rigidbody2D rigid2D; must be declared as a variable first, then assigned an instance using GetComponent at the start.
+Used a key variable to return 1 for the right arrow key and -1 for the left arrow key. When applying AddForce with Vector3, setting the x-coordinate value to key determines the movement direction based on the sign. The character’s image also flips accordingly.
+March 10 (After 11 PM)
+Implemented camera movement following player movement by writing a CameraController script.
+Passed the player’s coordinates (transform.position) to a Vector3 variable (playerPos).
+The object with this script as a component does not need to call a separate variable but can directly assign:
+csharp
+복사
+편집
+transform.position = new Vector3(transform.position.x, playerPos.y, transform.position.z);
+This automatically adjusts the camera’s Y position based on the player's Y coordinate.
+Collision detection is divided into collision mode and trigger mode.
+Functions include OnCollisionEnter2D and OnTriggerEnter2D, with collision states categorized as:
+Enter (collision starts)
+Stay (ongoing collision)
+Exit (collision ends)
+For collision detection only: Both objects must have Colliders, but only one needs a Rigidbody.
+For physical interactions after collision: Both objects must have Rigidbody and Colliders.
