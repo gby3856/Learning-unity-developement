@@ -14,8 +14,6 @@ Implemented camera movement following player movement by writing a CameraControl
 Passed the player’s coordinates (transform.position) to a Vector3 variable (playerPos).
 The object with this script as a component does not need to call a separate variable but can directly assign:
 csharp
-복사
-편집
 transform.position = new Vector3(transform.position.x, playerPos.y, transform.position.z);
 This automatically adjusts the camera’s Y position based on the player's Y coordinate.
 Collision detection is divided into collision mode and trigger mode.
